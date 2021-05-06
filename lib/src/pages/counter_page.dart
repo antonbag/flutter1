@@ -7,7 +7,8 @@ class CounterPage extends StatefulWidget {
 
 class _CounterPageState extends State<CounterPage> {
   final _estiloTexto = new TextStyle(fontSize: 25, color: Colors.green);
-  final _estiloContador = new TextStyle(fontSize: 20, color: Colors.red);
+  final _estiloContador = new TextStyle(fontSize: 20, color: Colors.green);
+  final _estiloContadorNegativo = new TextStyle(fontSize: 20, color: Colors.red);
 
   int _conteo = 0;
 
@@ -38,20 +39,44 @@ class _CounterPageState extends State<CounterPage> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("número de clicks wow", style: _estiloTexto),
-          Text('$_conteo', style: _estiloContador)
+          Text("cambia de color :)", style: _estiloTexto),
+          esNegativo(_conteo)
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add_ic_call_sharp),
-        onPressed: () {
-          _conteo++;
-          setState(() {
-
-          });
-
-        },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            margin: EdgeInsets.only(right: 10),
+            child: FloatingActionButton(
+              backgroundColor: Colors.red[100],
+              child: Icon(Icons.remove_circle, color: Colors.red),
+              onPressed: () {
+                _conteo--;
+                setState(() {});
+              },
+            ),
+          ),
+          FloatingActionButton(
+            backgroundColor: Colors.green[100],
+            child: Icon(Icons.add_circle, color: Colors.red),
+            onPressed: () {
+              _conteo++;
+              setState(() {});
+            },
+          ),
+        ],
       ),
     );
+  }
+
+  esNegativo(int valor) {
+    //un poco retorcido pero quería probar
+    if(valor.isNegative){
+        return Text('$_conteo', style: _estiloContadorNegativo);
+    }else{
+       return Text('$_conteo', style: _estiloContador);
+    }
+   
   }
 }

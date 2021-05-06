@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 final _icons = <String, IconData> {
   "plus_one": Icons.plus_one,
   "tune": Icons.tune, 
-  "folder_open": Icons.folder_open
+  "folder_open": Icons.folder_open,
+  "movies": Icons.movie_sharp
 };
 
 

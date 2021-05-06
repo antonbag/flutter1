@@ -18,6 +18,12 @@
             "icon" : "folder_open",
             "texto": "Cards - Tarjetas",
             "color": "0xffc20d2d"
+        },
+        {
+            "ruta" : "movies",
+            "icon" : "movies",
+            "texto": "Movies - mariano",
+            "color": "0xff654321"
         }
     ]
 }

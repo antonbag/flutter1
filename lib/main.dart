@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'que rapido va todo app',
+      title: 'examen final flutter avm21',
       debugShowCheckedModeBanner: false,
       //home: HomePage(),
       initialRoute: '/',
